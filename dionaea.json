@@ -772,3 +772,9 @@
 {"connection": {"protocol": "epmapper", "transport": "tcp", "type": "accept"}, "dst_ip": "192.168.144.2", "dst_port": 135, "src_hostname": "", "src_ip": "192.168.144.1", "src_port": 56606, "timestamp": "2024-05-17T07:23:55.455758"}
 {"connection": {"protocol": "epmapper", "transport": "tcp", "type": "accept"}, "dst_ip": "192.168.144.2", "dst_port": 135, "src_hostname": "", "src_ip": "192.168.144.1", "src_port": 56612, "timestamp": "2024-05-17T07:23:55.499083"}
 {"connection": {"protocol": "mysqld", "transport": "tcp", "type": "accept"}, "dst_ip": "192.168.144.2", "dst_port": 3306, "src_hostname": "", "src_ip": "192.168.144.1", "src_port": 40198, "timestamp": "2024-05-17T07:16:55.404468", "credentials": {"password": [""], "username": ["root"]}}
+
+
+{"connection": {"protocol": "ftpd", "transport": "tcp", "type": "accept"}, "dst_ip": "172.16.130.69", "dst_port": 21, "src_hostname": "", "src_ip": "20.1.1.50", "src_port": 29437, "timestamp": "2024-05-17T10:32:54.051806"}
+{"connection": {"protocol": "ftpd", "transport": "tcp", "type": "accept"}, "dst_ip": "172.16.130.69", "dst_port": 21, "src_hostname": "", "src_ip": "20.1.1.50", "src_port": 29438, "timestamp": "2024-05-17T10:32:55.103516", "ftp": {"commands": {"arguments": ["anonymous", "anonymous", "", "I", ""], "command": ["USER", "PASS", "FEAT", "TYPE", "REIN"]}}, "credentials": {"username": ["anonymous"], "password": ["anonymous"]}}
+{"connection": {"protocol": "ftpd", "transport": "tcp", "type": "accept"}, "dst_ip": "172.16.130.69", "dst_port": 21, "src_hostname": "", "src_ip": "20.1.1.50", "src_port": 29439, "timestamp": "2024-05-17T10:32:55.266438", "ftp": {"commands": {"arguments": ["ftp", "ftp", "", "I", ""], "command": ["USER", "PASS", "FEAT", "TYPE", "REIN"]}}, "credentials": {"username": ["ftp"], "password": ["ftp"]}}
+

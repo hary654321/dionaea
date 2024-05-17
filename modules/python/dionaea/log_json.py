@@ -243,11 +243,11 @@ class LogJsonHandler(ihandler):
             return
 
         if "ftp" not in data:
-            data["ftp"] = {}
+            data["extend"] = {}
         if "commands" not in data["ftp"]:
-            data["ftp"]["commands"] = []
+            data["extend"]["commands"] = []
 
-        data["ftp"]["commands"].append({
+        data["extend"]["commands"].append({
             "command": self._prepare_value(icd.command),
             "arguments": self._prepare_value(icd.arguments)
         })
