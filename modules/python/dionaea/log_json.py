@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 from dionaea import IHandlerLoader
 from dionaea.core import ihandler
 from dionaea.exception import LoaderError
-
+import time
 
 logger = logging.getLogger("log_json")
 logger.setLevel(logging.DEBUG)
@@ -111,9 +111,9 @@ class LogJsonHandler(ihandler):
             "username": self._prepare_value(icd.username)
         }
 
-        if "credentials" not in data:
-            data["credentials"] = []
-        data["credentials"].append(credentials)
+        if "extend" not in data:
+            data["extend"] = []
+        data["extend"].append(credentials)
 
     def _flatten_data(self, data):
         # Add more if needed
@@ -171,12 +171,14 @@ class LogJsonHandler(ihandler):
                 "transport": con.transport,
                 "type": connection_type
             },
-            "dst_ip": con.local.host,
-            "dst_port": con.local.port,
+            "protocol": con.protocol,
+            "type": connection_type,
+            "dest_ip": con.local.host,
+            "dest_port": con.local.port,
             "src_hostname": self._prepare_value(con.remote.hostname),
             "src_ip": con.remote.host,
             "src_port": con.remote.port,
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": int(time.time() * 1000),
         }
         self.attacks[con] = data
 
