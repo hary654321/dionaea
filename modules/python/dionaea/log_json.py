@@ -242,9 +242,9 @@ class LogJsonHandler(ihandler):
             # ToDo: warning
             return
 
-        if "ftp" not in data:
+        if "extend" not in data:
             data["extend"] = {}
-        if "commands" not in data["ftp"]:
+        if "commands" not in data["extend"]:
             data["extend"]["commands"] = []
 
         data["extend"]["commands"].append({
