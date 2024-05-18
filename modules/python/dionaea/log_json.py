@@ -180,7 +180,7 @@ class LogJsonHandler(ihandler):
             "src_port": con.remote.port,
             "name":con.protocol,
             "app":con.protocol,
-            "uuid":con.protocol+time.time(),
+            "uuid":con.protocol+str(time.time()),
             "timestamp": int(time.time() * 1000),
         }
         self.attacks[con] = data
