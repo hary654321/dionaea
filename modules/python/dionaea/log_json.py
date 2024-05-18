@@ -108,8 +108,14 @@ class LogJsonHandler(ihandler):
 
         if "extend" not in data:
             data["extend"] = []
-        data["extend"]["password"]=self._prepare_value(icd.password)
-        data["extend"]["username"]=self._prepare_value(icd.username)
+            credentials = {
+                "password": self._prepare_value(icd.password),
+                "username": self._prepare_value(icd.username)
+            }
+            data["extend"].append(credentials)
+        else:
+            data["extend"]["password"]=self._prepare_value(icd.password)
+            data["extend"]["username"]=self._prepare_value(icd.username)
 
     def _flatten_data(self, data):
         # Add more if needed
