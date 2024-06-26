@@ -189,42 +189,42 @@ class LogJsonHandler(ihandler):
         self.attacks[con] = data
 
     def handle_incident_dionaea_connection_tcp_listen(self, icd):
-        self._serialize_connection(icd, "listen")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("listen connection on %s:%i" % (con.remote.host, con.remote.port))
 
     def handle_incident_dionaea_connection_tls_listen(self, icd):
-        self._serialize_connection(icd, "listen")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("listen connection on %s:%i" % (con.remote.host, con.remote.port))
 
     def handle_incident_dionaea_connection_tcp_connect(self, icd):
-        self._serialize_connection(icd, "connect")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("connect connection to %s/%s:%i from %s:%i" % (con.remote.host, con.remote.hostname, con.remote.port, con.local.host, con.local.port))
 
     def handle_incident_dionaea_connection_tls_connect(self, icd):
-        self._serialize_connection(icd, "connect")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("connect connection to %s/%s:%i from %s:%i" % (con.remote.host, con.remote.hostname, con.remote.port, con.local.host, con.local.port))
 
     def handle_incident_dionaea_connection_udp_connect(self, icd):
-        self._serialize_connection(icd, "connect")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("connect connection to %s/%s:%i from %s:%i" % (con.remote.host, con.remote.hostname, con.remote.port, con.local.host, con.local.port))
 
     def handle_incident_dionaea_connection_tcp_accept(self, icd):
-        self._serialize_connection(icd, "accept")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("accepted connection from %s:%i to %s:%i" % (con.remote.host, con.remote.port, con.local.host, con.local.port))
 
     def handle_incident_dionaea_connection_tls_accept(self, icd):
-        self._serialize_connection(icd, "accept")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("accepted connection from %s:%i to %s:%i" % (con.remote.host, con.remote.port, con.local.host, con.local.port))
 
     def handle_incident_dionaea_connection_tcp_reject(self, icd):
-        self._serialize_connection(icd, "reject")
+        self._serialize_connection(icd, "scan")
         con = icd.con
         logger.info("reject connection from %s:%i to %s:%i" % (con.remote.host, con.remote.port, con.local.host, con.local.port))
 
